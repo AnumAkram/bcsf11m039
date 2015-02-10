@@ -1,0 +1,44 @@
+﻿@model newApp.Models.cell
+@{
+    ViewBag.Title = "searchR";
+}
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <div id="s1">
+    </div>
+    @*<input type="button" id="b1" value="getResult" />*@
+
+    <div id="d1"></div>
+    <p></p>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        var key = "@ViewBag.s";
+        alert(key)
+        $.getJSON("/Home/Search?search1="+key ,function (data) {
+            alert(data)
+            //$.each(data, function (i, item) {
+            //    alert(item)
+            //    $("#s").append("<p>" + item + "</p>");
+            //});
+
+            $.each(data, function (i, item) {
+                $.each(item, function (key, val) {
+                    alert(val)
+                    $("#s1").append("<p>" + val + "</p>");
+                });
+            });
+        });
+
+        //$.each(data, function (i, item) {
+        //    $.each(item, function (key, val) {
+        //        $("#s").add("<p>" + val + "</p>");
+        //    });
+        //});
+    </script>
+</body>
+</html>
+
+

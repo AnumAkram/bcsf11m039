@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "cloth";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model newApp.Models.cloth
+@foreach (var x in ViewBag.cloth)
+{
+
+    <p>
+        <h4>price is : @x.price  </h4>
+        <br /><h4>  Title of ad is : @x.adTitle  </h4>
+        <br />
+        <img src="@x.url" height="200" width="200" />
+        <br />
+    </p>
+
+
+}
